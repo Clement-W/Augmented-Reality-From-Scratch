@@ -3,12 +3,12 @@ clear
 close all
 
 % Open the input video and take the first image
-video = VideoReader('inputVideo.mp4');
+video = VideoReader('../video/inputVideo.mp4');
 img = read(video, 1);
 imshow(img);
 
 % Read the image to insert
-imageToProject = uint8(imread('ImageToBeProjected.jpg'));
+imageToProject = uint8(imread('../img/ImageToBeProjected.jpg'));
 X2 = [1 size(imageToProject, 2) 1 size(imageToProject, 2)];
 Y2 = [1 1 size(imageToProject, 1) size(imageToProject, 1)];
 
@@ -25,7 +25,7 @@ LastTwoCornersDetected = [cornersT0, cornersT0];
 % This is why this matrix is used
 
 % Open the video in write mode and initialize the frame counter
-outputVideo = VideoWriter('video.avi');
+outputVideo = VideoWriter('../video/outputVid.avi');
 open(outputVideo);
 numFrame = 1;
 
